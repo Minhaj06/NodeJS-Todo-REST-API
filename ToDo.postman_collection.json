@@ -1,0 +1,401 @@
+{
+	"info": {
+		"_postman_id": "1d8d9ac9-1c04-4f81-b2cd-f39390e256ab",
+		"name": "ToDo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23642720"
+	},
+	"item": [
+		{
+			"name": "Login Registration",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Mst. Sadia\",\r\n    \"lastName\": \"Khatun\",\r\n    \"email\": \"sadia@gmail.com\",\r\n    \"mobile\": \"01766666666\",\r\n    \"department\": \"computer\",\r\n    \"shift\": \"first\",\r\n    \"password\": \"Sadia#60\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/signup",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"sadia@gmail.com\",\r\n    \"password\": \"Sadia#60\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/signin",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Student Profile",
+			"item": [
+				{
+					"name": "selectProfile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token-key",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BaseURL}}/profile",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateProfile",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token-key",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"frstName\": \"Sadia\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/updateProfile",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"updateProfile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ToDo Lists",
+			"item": [
+				{
+					"name": "createToDo",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token-key",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"toDoSubject\": \"This is third ToDo\",\r\n    \"toDoDescription\": \"This is third ToDo description\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/createToDo",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"createToDo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "toDoLists",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token-key",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BaseURL}}/toDoLists",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"toDoLists"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateToDo",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token-key",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"638626cd6120ebf216810c8f\",\r\n    \"toDoSubject\": \"New to do\",\r\n    \"toDoDescription\": \"New to do descrioption\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/updateToDoList",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"updateToDoList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateToDoStatus",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token-key",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"63865da6fa92c5e4db1de3bd\",\r\n    \"toDoStatus\": \"cancel\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/updateToDoStatus",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"updateToDoStatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "removeToDo",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token-key",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"63864742cc112485043e1250\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/removeToDo",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"removeToDo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "selectToDoByStatus",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token-key",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"toDoStatus\": \"complete\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/selectToDoByStatus",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"selectToDoByStatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "selectToDoByDate",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token-key",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fromDate\": \"2022-11-29\",\r\n    \"toDate\": \"2022-11-30\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/selectToDoByDate",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"selectToDoByDate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "{{BaseURL}}",
+			"value": "http://localhost:5000/api/v1",
+			"type": "string"
+		},
+		{
+			"key": "{{Token}}",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "BaseURL",
+			"value": "http://localhost:5000/api/v1"
+		},
+		{
+			"key": "Token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njk4MjgzMDIsImRhdGEiOnsiX2lkIjoiNjM4NjNiZDM3ODk5YzBiM2UwNDg2NjFiIiwiZmlyc3ROYW1lIjoiTXN0LiBTYWRpYSIsImxhc3ROYW1lIjoiS2hhdHVuIiwiZW1haWwiOiJzYWRpYUBnbWFpbC5jb20iLCJtb2JpbGUiOiIwMTc2NjY2NjY2NiIsImRlcGFydG1lbnQiOiJjb21wdXRlciIsInNoaWZ0IjoiZmlyc3QiLCJwYXNzd29yZCI6IlNhZGlhIzYwIiwiY3JlYXRlZEF0IjoiMjAyMi0xMS0yOVQxNzowNToyMy40NzZaIiwidXBkYXRlZEF0IjoiMjAyMi0xMS0yOVQxNzowNToyMy40NzZaIn0sImlhdCI6MTY2OTc0MTkwMn0.zPNMjD8bzUYAp9vuiezX2So599XAGi8poq3xdppqHx4"
+		},
+		{
+			"key": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njk4MjkyNDYsImRhdGEiOnsiX2lkIjoiNjM4NjNiZDM3ODk5YzBiM2UwNDg2NjFiIiwiZmlyc3ROYW1lIjoiTXN0LiBTYWRpYSIsImxhc3ROYW1lIjoiS2hhdHVuIiwiZW1haWwiOiJzYWRpYUBnbWFpbC5jb20iLCJtb2JpbGUiOiIwMTc2NjY2NjY2NiIsImRlcGFydG1lbnQiOiJjb21wdXRlciIsInNoaWZ0IjoiZmlyc3QiLCJwYXNzd29yZCI6IlNhZGlhIzYwIiwiY3JlYXRlZEF0IjoiMjAyMi0xMS0yOVQxNzowNToyMy40NzZaIiwidXBkYXRlZEF0IjoiMjAyMi0xMS0yOVQxNzowNToyMy40NzZaIn0sImlhdCI6MTY2OTc0Mjg0Nn0.BuQSLtuaryzM0wtAnHC_dI7TO7spdB5wy1z23L4eXqw",
+			"value": "Token"
+		},
+		{
+			"key": "TokenKey",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njk4MjkyNDYsImRhdGEiOnsiX2lkIjoiNjM4NjNiZDM3ODk5YzBiM2UwNDg2NjFiIiwiZmlyc3ROYW1lIjoiTXN0LiBTYWRpYSIsImxhc3ROYW1lIjoiS2hhdHVuIiwiZW1haWwiOiJzYWRpYUBnbWFpbC5jb20iLCJtb2JpbGUiOiIwMTc2NjY2NjY2NiIsImRlcGFydG1lbnQiOiJjb21wdXRlciIsInNoaWZ0IjoiZmlyc3QiLCJwYXNzd29yZCI6IlNhZGlhIzYwIiwiY3JlYXRlZEF0IjoiMjAyMi0xMS0yOVQxNzowNToyMy40NzZaIiwidXBkYXRlZEF0IjoiMjAyMi0xMS0yOVQxNzowNToyMy40NzZaIn0sImlhdCI6MTY2OTc0Mjg0Nn0.BuQSLtuaryzM0wtAnHC_dI7TO7spdB5wy1z23L4eXqw"
+		}
+	]
+}

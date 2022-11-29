@@ -75,7 +75,7 @@ exports.selectProfile = (req, res) => {
 // Update Student Profile
 exports.updateProfile = (req, res) => {
     let email = req.headers['email'];
-    // res.status(200).json({ status: "success", data: req.body })
+
     studentModel.updateOne({ email: email }, { $set: req.body }, { upsert: true }, (err, data) => {
 
         if (err) {
